@@ -52,10 +52,10 @@ console.log(getLargestCountry());
 
 function getCountryInformation() {
     var cityInfo = {};
-    for (var i = 0; i < countries.length;i++) {
+    for (var i = 0; i < countries.length; i++) {
         var countryPopulation = 0;
         for (var city in countries[i]) {
-            if (!isNaN(parseFloat(countries[i][city])) && isFinite(countries[i][city])){
+            if (!isNaN(parseFloat(countries[i][city])) && isFinite(countries[i][city])) {
                 countryPopulation = countries[i][city] + countryPopulation;
             }
         }
@@ -64,4 +64,5 @@ function getCountryInformation() {
 
     return cityInfo;
 }
+
 console.log(getCountryInformation());
