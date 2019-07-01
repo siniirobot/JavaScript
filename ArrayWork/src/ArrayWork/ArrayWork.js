@@ -12,17 +12,17 @@ console.log(numberArray);
 
 numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
-function subArrayFirstFive() {
+function getSubArrayFirstFive() {
     return numberArray.slice(0, 5);
 }
 
-console.log(subArrayFirstFive());
+console.log(getSubArrayFirstFive());
 
-function subArrayLastFive() {
+function getSubArrayLastFive() {
     return numberArray.slice(10);
 }
 
-console.log(subArrayLastFive());
+console.log(getSubArrayLastFive());
 
 function sumEvenNumbers() {
     return numberArray.reduce(function (sum, current) {
@@ -36,7 +36,7 @@ function sumEvenNumbers() {
 
 console.log(sumEvenNumbers());
 
-function squaresOfEvenNumbersList() {
+function getSquaresOfEvenNumbersList() {
     var hundred = [];
     var squaresEvenNumbersList = [];
 
@@ -51,4 +51,4 @@ function squaresOfEvenNumbersList() {
 }
 
 
-console.log(squaresOfEvenNumbersList());
+console.log(getSquaresOfEvenNumbersList());
