@@ -22,12 +22,12 @@ var countries = [
         getName: function () {
             return this.name;
         },
-        cityG: 3500,
-        cityH: 999000,
-        cityI: 57000,
-        cityJ: 1402,
-        cityK: 48836,
-        cityL: 45458484
+        cityG: 3000,
+        cityH: 9000,
+        cityI: 5000,
+        cityJ: 1400,
+        cityK: 4000,
+        cityL: 7000
     }
 
 ];
@@ -48,19 +48,20 @@ function getLargestCountry() {
     return nameLargestCountry;
 }
 
-console.log(largestCountry());
+console.log(getLargestCountry());
 
 function getCountryInformation() {
     var cityInfo = {};
     for (var i = 0; i < countries.length;i++) {
         var countryPopulation = 0;
         for (var city in countries[i]) {
-            countryPopulation += city;
+            if (!isNaN(parseFloat(countries[i][city])) && isFinite(countries[i][city])){
+                countryPopulation = countries[i][city] + countryPopulation;
+            }
         }
         cityInfo[countries[i].getName()] = countryPopulation;
     }
 
     return cityInfo;
 }
-
 console.log(getCountryInformation());
