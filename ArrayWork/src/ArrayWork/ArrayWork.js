@@ -1,14 +1,15 @@
 var numberArray = [1, 2, 3, 4, 5];
 
 
-function reverse() {
-    numberArray.sort(function reversSort(a, b) {
+function descendSort(array) {
+    array.sort(function (a, b) {
         return b - a;
     });
+
+    return array;
 }
 
-reverse();
-console.log(numberArray);
+console.log(descendSort(numberArray));
 
 numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
