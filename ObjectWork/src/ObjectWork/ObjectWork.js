@@ -1,33 +1,53 @@
 var countries = [
     countryA = {
         name: "countryA",
-        getName: function () {
-            return this.name;
-        },
-        cityA: 5000,
-        cityB: 8000,
-        cityC: 9000,
-        cityD: 1000
+        cites: [
+            cityA = {
+                population: 5000
+            },
+            cityB = {
+                population: 8000
+            },
+            cityC = {
+                population: 9000
+            },
+            cityD = {
+                population: 1000
+            }
+        ]
     },
     countryB = {
         name: "countryB",
-        getName: function () {
-            return this.name;
-        },
-        cityE: 2000,
-        cityF: 80000
+        cites: [
+            cityE = {
+                population: 2000
+            },
+            cityF = {
+                population: 80000
+            }
+        ]
     },
     countryC = {
         name: "countryC",
-        getName: function () {
-            return this.name;
-        },
-        cityG: 3000,
-        cityH: 9000,
-        cityI: 5000,
-        cityJ: 1400,
-        cityK: 4000,
-        cityL: 7000
+        cites: [
+            cityG = {
+                population: 5000
+            },
+            cityH = {
+                population: 5000
+            },
+            cityI = {
+                population: 5000
+            },
+            cityJ = {
+                population: 5000
+            },
+            cityK = {
+                population: 5000
+            },
+            cityL = {
+                population: 5000
+            }]
     }
 
 ];
@@ -41,7 +61,7 @@ function getLargestCountry() {
 
         if (cityCount > largestCountry) {
             largestCountry = cityCount;
-            nameLargestCountry = countries[i].getName();
+            nameLargestCountry = countries[i];
         }
     }
 
