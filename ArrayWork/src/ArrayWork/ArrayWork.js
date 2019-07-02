@@ -13,17 +13,17 @@ console.log(descendSort(numberArray));
 
 numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
-function getSubArrayFirstFive() {
-    return numberArray.slice(0, 5);
+function getSubArrayFirstFive(array) {
+    return array.slice(0, 5);
 }
 
-console.log(getSubArrayFirstFive());
+console.log(getSubArrayFirstFive(numberArray));
 
-function getSubArrayLastFive() {
-    return numberArray.slice(10);
+function getSubArrayLastFive(array) {
+    return array.slice(array.length - 5);
 }
 
-console.log(getSubArrayLastFive());
+console.log(getSubArrayLastFive(numberArray));
 
 function sumEvenNumbers() {
     return numberArray.reduce(function (sum, current) {
