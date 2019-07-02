@@ -34,21 +34,29 @@ function sumEvenNumbers() {
     }, 0);
 }
 
-
 console.log(sumEvenNumbers());
 
-function getSquaresOfEvenNumbersList() {
+function getHundredArray() {
     var hundred = [];
-    var squaresEvenNumbersList = [];
 
     for (var i = 0; i < 100; i++) {
         hundred[i] = i + 1;
-        if (hundred[i] % 2 === 0) {
-            squaresEvenNumbersList.push(hundred[i] * 2);
-        }
     }
 
-    return squaresEvenNumbersList;
+    return hundred;
+}
+
+var hundred = getHundredArray();
+console.log(hundred);
+
+function getSquaresOfEvenNumbersList() {
+    return hundred
+        .filter(function (value) {
+            return value % 2 === 0
+        })
+        .map(function (value) {
+            return value * 2
+        });
 }
 
 
