@@ -39,8 +39,8 @@ console.log(sumEvenNumbers());
 function getHundredArray() {
     var hundred = [];
 
-    for (var i = 0; i < 100; i++) {
-        hundred[i] = i + 1;
+    for (var i = 0; i < 100;) {
+        hundred[i] = ++i;
     }
 
     return hundred;
@@ -52,10 +52,10 @@ console.log(hundred);
 function getSquaresOfEvenNumbersList() {
     return hundred
         .filter(function (value) {
-            return value % 2 === 0
+            return value % 2 === 0;
         })
         .map(function (value) {
-            return value * 2
+            return value * value;
         });
 }
 
