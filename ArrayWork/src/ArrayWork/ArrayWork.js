@@ -39,8 +39,8 @@ console.log(sumEvenNumbers());
 function getHundredArray() {
     var hundred = [];
 
-    for (var i = 0; i < 100;) {
-        hundred[i] = ++i;
+    for (var i = 1; i <= 100;i++) {
+        hundred.push(i);
     }
 
     return hundred;
