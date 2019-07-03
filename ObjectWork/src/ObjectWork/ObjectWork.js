@@ -3,15 +3,19 @@ var countries = [
         name: "countryA",
         cites: [
             cityA = {
+                name: "cityA",
                 population: 5000
             },
             cityB = {
+                name: "cityB",
                 population: 8000
             },
             cityC = {
+                name: "cityC",
                 population: 9000
             },
             cityD = {
+                name: "cityD",
                 population: 1000
             }
         ]
@@ -20,9 +24,11 @@ var countries = [
         name: "countryB",
         cites: [
             cityE = {
+                name: "cityE",
                 population: 2000
             },
             cityF = {
+                name: "cityF",
                 population: 80000
             }
         ]
@@ -31,56 +37,87 @@ var countries = [
         name: "countryC",
         cites: [
             cityG = {
-                population: 5000
+                name: "cityG",
+                population: 12000
             },
             cityH = {
-                population: 5000
+                name: "cityH",
+                population: 8000
             },
             cityI = {
-                population: 5000
+                name: "cityI",
+                population: 9000
             },
             cityJ = {
-                population: 5000
-            },
+                name: "cityJ",
+                population: 1000
+            }
+        ]
+    },
+    countryD = {
+        name: "countryD",
+        cites: [
             cityK = {
+                name: "cityK",
                 population: 5000
             },
             cityL = {
+                name: "cityL",
+                population: 5000
+            },
+            cityM = {
+                name: "cityM",
+                population: 5000
+            },
+            cityN = {
+                name: "cityN",
+                population: 5000
+            },
+            cityO = {
+                name: "cityO",
+                population: 5000
+            },
+            cityP = {
+                name: "cityP",
                 population: 5000
             }]
     }
 
 ];
 
-function getLargestCountry() {
-    var nameLargestCountry;
-    var largestCountry = 0;
+function getLargestCountry(array) {
+    var largestCountry = [];
 
-    for (var i = 0; i < countries.length; i++) {
-        var cityCount = Object.keys(countries[i]).length - 2;
+    array
+        .map(function (value) {
+            if (largestCountry.length === 0) {
+                largestCountry.push(value)
+            } else {
+                if (value.cites.length > largestCountry[0].cites.length) {
+                    largestCountry = [];
+                    largestCountry.push(value);
+                } else if (value.cites.length === largestCountry[0].cites.length) {
+                    largestCountry.push(value);
+                }
+            }
+        });
 
-        if (cityCount > largestCountry) {
-            largestCountry = cityCount;
-            nameLargestCountry = countries[i];
-        }
-    }
-
-    return nameLargestCountry;
+    return largestCountry;
 }
 
-console.log(getLargestCountry());
+console.log(getLargestCountry(countries));
 
 function getCountryInformation() {
     var cityInfo = {};
-    for (var i = 0; i < countries.length; i++) {
-        var countryPopulation = 0;
-        for (var city in countries[i]) {
-            if (!isNaN(parseFloat(countries[i][city])) && isFinite(countries[i][city])) {
-                countryPopulation = countries[i][city] + countryPopulation;
-            }
-        }
-        cityInfo[countries[i].getName()] = countryPopulation;
-    }
+
+    countries
+        .forEach(function (value) {
+
+            cityInfo[value.name] = value.cites
+                .reduce(function (previousValue, currentValue) {
+                    return previousValue += currentValue.population;
+                },0);
+        });
 
     return cityInfo;
 }
