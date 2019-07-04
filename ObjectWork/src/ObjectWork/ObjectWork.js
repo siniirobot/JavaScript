@@ -88,8 +88,7 @@ var countries = [
 function getLargestCountry(array) {
     var largestCountry = [];
 
-    array
-        .map(function (value) {
+    array.map(function (value) {
             if (largestCountry.length === 0) {
                 largestCountry.push(value)
             } else {
@@ -110,11 +109,8 @@ console.log(getLargestCountry(countries));
 function getCountryInformation() {
     var cityInfo = {};
 
-    countries
-        .forEach(function (value) {
-
-            cityInfo[value.name] = value.cities
-                .reduce(function (previousValue, currentValue) {
+    countries.forEach(function (value) {
+            cityInfo[value.name] = value.cities.reduce(function (previousValue, currentValue) {
                     return previousValue += currentValue.population;
                 }, 0);
         });
