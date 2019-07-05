@@ -102,16 +102,14 @@ function getLargestCountries(array) {
 
 console.log(getLargestCountries(countries));
 
-function getCountriesInformation() {
-    var countriesInfo = {};
-
-    countries.forEach(function (value) {
-        countriesInfo[value.name] = value.cities.reduce(function (previousValue, currentValue) {
-            return previousValue += currentValue.population;
+function getCountriesInformation(array) {
+    return array.reduce(function (previousValue, currentValue) {
+        previousValue[currentValue.name] = currentValue.cities.reduce(function (previousValue1, currentValue1) {
+            previousValue1 += currentValue1.population;
+            return previousValue1;
         }, 0);
-    });
-
-    return countriesInfo;
+        return previousValue;
+    }, {});
 }
 
-console.log(getCountriesInformation());
+console.log(getCountriesInformation(countries));
