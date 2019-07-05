@@ -82,7 +82,6 @@ var countries = [
                 population: 5000
             }]
     }
-
 ];
 
 function getLargestCountries(array) {
@@ -104,15 +103,15 @@ function getLargestCountries(array) {
 console.log(getLargestCountries(countries));
 
 function getCountriesInformation() {
-    var cityInfo = {};
+    var countriesInfo = {};
 
     countries.forEach(function (value) {
-        cityInfo[value.name] = value.cities.reduce(function (previousValue, currentValue) {
+        countriesInfo[value.name] = value.cities.reduce(function (previousValue, currentValue) {
             return previousValue += currentValue.population;
         }, 0);
     });
 
-    return cityInfo;
+    return countriesInfo;
 }
 
 console.log(getCountriesInformation());
