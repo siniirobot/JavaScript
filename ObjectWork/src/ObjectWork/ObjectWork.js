@@ -85,31 +85,37 @@ var countries = [
 ];
 
 function getLargestCountries(array) {
-    return array.reduce(function (previousValue, currentValue) {
-        if (previousValue.length === 0) {
-            previousValue.push(currentValue);
+    var largestCountries = [];
+    array.forEach(function (value) {
+        if (largestCountries.length === 0) {
+            largestCountries.push(value);
         } else {
-            if (previousValue[0].cities.length < currentValue.cities.length) {
-                previousValue = [];
-                previousValue.push(currentValue);
-            } else if (previousValue[0].cities.length === currentValue.cities.length) {
-                previousValue.push(currentValue);
+            if (largestCountries[0].cities.length < value.cities.length) {
+                largestCountries = [];
+                largestCountries.push(value);
+            } else if (largestCountries[0].cities.length === value.cities.length) {
+                largestCountries.push(value);
             }
         }
-        return previousValue;
-    }, []);
+    });
+
+    return largestCountries;
 }
 
 console.log(getLargestCountries(countries));
 
 function getCountriesInformation(array) {
-    return array.reduce(function (previousValue, currentValue) {
-        previousValue[currentValue.name] = currentValue.cities.reduce(function (previousValue1, currentValue1) {
-            previousValue1 += currentValue1.population;
-            return previousValue1;
-        }, 0);
-        return previousValue;
-    }, {});
+    var countriesInformation = {};
+
+    array.forEach(function (value) {
+        var countryPopulation = 0;
+        value.cities.forEach(function (value1) {
+            countryPopulation += value1.population;
+        });
+        countriesInformation[value.name] = countryPopulation;
+    });
+
+    return countriesInformation;
 }
 
 console.log(getCountriesInformation(countries));
