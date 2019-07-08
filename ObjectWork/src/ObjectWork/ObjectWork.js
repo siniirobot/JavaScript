@@ -108,11 +108,9 @@ function getCountriesInformation(array) {
     var countriesInformation = {};
 
     array.forEach(function (value) {
-        var countryPopulation = 0;
-        value.cities.forEach(function (value1) {
-            countryPopulation += value1.population;
-        });
-        countriesInformation[value.name] = countryPopulation;
+        countriesInformation[value.name] = value.cities.reduce(function (sum, currentValue) {
+            return sum + currentValue.population;
+        },0);
     });
 
     return countriesInformation;
