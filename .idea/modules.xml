@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JavaScript.iml" filepath="$PROJECT_DIR$/JavaScript.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ObjectWork/ObjectWork.iml" filepath="$PROJECT_DIR$/ObjectWork/ObjectWork.iml" />
     </modules>
   </component>
 </project>

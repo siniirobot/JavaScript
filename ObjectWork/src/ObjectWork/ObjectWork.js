@@ -85,33 +85,28 @@ var countries = [
     }
 ];
 
-function getLargestCountries(array) {
-    var largestCountries = [];
-    array.forEach(function (value) {
-        if (largestCountries.length === 0) {
-            largestCountries.push(value);
-        } else {
-            if (largestCountries[0].cities.length < value.cities.length) {
-                largestCountries = [];
-                largestCountries.push(value);
-            } else if (largestCountries[0].cities.length === value.cities.length) {
-                largestCountries.push(value);
-            }
-        }
+function getLargestCitiesCountInCountry(countries) {
+    var largestCountries = countries;
+    largestCountries.sort(function (country1, country2) {
+        return country2.cities.length - country1.cities.length;
     });
 
-    return largestCountries;
+    return largestCountries.filter(function (country) {
+        return country.cities.length === largestCountries[0].cities.length
+    });
 }
 
-console.log(getLargestCountries(countries));
+console.log(getLargestCitiesCountInCountry(countries));
 
-function getCountriesInformation(array) {
+function getCountriesInformation(countries) {
     var countriesInformation = {};
 
-    array.forEach(function (value) {
-        countriesInformation[value.name] = value.cities.reduce(function (sum, currentValue) {
-            return sum + currentValue.population;
-        }, 0);
+    countries.forEach(function (country) {
+        var countryPopulation = 0;
+        country.cities.forEach(function (city) {
+            countryPopulation += city.population;
+        });
+        countriesInformation[country.name] = countryPopulation;
     });
 
     return countriesInformation;
