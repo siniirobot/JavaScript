@@ -86,21 +86,14 @@ var countries = [
 ];
 
 function getLargestCitiesCountInCountry(countries) {
-    var largestCountries = [];
-    countries.forEach(function (country) {
-        if (largestCountries.length === 0) {
-            largestCountries.push(country);
-        } else {
-            if (largestCountries[0].cities.length < country.cities.length) {
-                largestCountries = [];
-                largestCountries.push(country);
-            } else if (largestCountries[0].cities.length === country.cities.length) {
-                largestCountries.push(country);
-            }
-        }
+    var largestCountries = countries;
+    largestCountries.sort(function (country1, country2) {
+        return country2.cities.length - country1.cities.length;
     });
 
-    return largestCountries;
+    return largestCountries.filter(function (country) {
+        return country.cities.length === largestCountries[0].cities.length
+    });
 }
 
 console.log(getLargestCitiesCountInCountry(countries));
