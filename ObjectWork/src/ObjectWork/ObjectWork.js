@@ -80,7 +80,8 @@ var countries = [
             {
                 name: "cityP",
                 population: 5000
-            }]
+            }
+        ]
     }
 ];
 
