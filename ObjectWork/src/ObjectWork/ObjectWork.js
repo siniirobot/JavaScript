@@ -80,7 +80,8 @@ var countries = [
             {
                 name: "cityP",
                 population: 5000
-            }]
+            }
+        ]
     }
 ];
 
@@ -110,7 +111,7 @@ function getCountriesInformation(array) {
     array.forEach(function (value) {
         countriesInformation[value.name] = value.cities.reduce(function (sum, currentValue) {
             return sum + currentValue.population;
-        },0);
+        }, 0);
     });
 
     return countriesInformation;
