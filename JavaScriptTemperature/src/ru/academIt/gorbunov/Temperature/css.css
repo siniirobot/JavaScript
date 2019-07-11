@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+
+.input-temp {
+    width: 25%;
+    margin: 5px 0;
+    float: left;
+}
+
+.output-temp {
+    width: 75%;
+    float: right;
+}
+
+p {
+    margin: 0;
+}
