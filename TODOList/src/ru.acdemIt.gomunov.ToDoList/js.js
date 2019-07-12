@@ -38,9 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         createLi(newText);
-
         toDoList.appendChild(li);
-
         inputTemp.value = "";
     });
 });
