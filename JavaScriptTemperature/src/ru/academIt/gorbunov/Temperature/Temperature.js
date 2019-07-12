@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     var inputTemp = document.getElementById("input");
-
     var inputTempButton = document.getElementById("input-temp-button");
+
     inputTempButton.addEventListener("click", function () {
         var newText = inputTemp.value;
 
