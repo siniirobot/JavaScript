@@ -13,7 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
         var li = document.createElement("li");
 
         function createLi(text) {
-            li.innerHTML = "<span></span><button type='button'>Стереть</button><button type='button'>Редактировать</button>";
+            li.innerHTML =
+                "<span></span>" +
+                "<button type='button'>Стереть</button>" +
+                "<button type='button'>Редактировать</button>";
 
             li.children[0].textContent = text + "   ";
             li.children[1].addEventListener("click", function () {
@@ -21,10 +24,18 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             li.children[2].addEventListener("click", function () {
-                li.innerHTML = "<input type='text' placeholder='Введите правки'><button type='button'>Ввод</button>";
-                var editButton = li.children[1];
+                li.innerHTML =
+                    "<input type='text' placeholder='Введите правки'>" +
+                    "<button type='button'>Отменить</button>" +
+                    "<button type='button'>Сохранить</button>";
+                var cancelButton = li.children[1];
+                var saveButton = li.children[2];
 
-                editButton.addEventListener("click", function () {
+                cancelButton.addEventListener("click", function () {
+                    createLi(text);
+                });
+
+                saveButton.addEventListener("click", function () {
                     var newEditText = li.children[0].value;
 
                     if (newEditText.trim() === "") {
@@ -33,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
 
                     createLi(newEditText);
-                });
+                })
             });
         }
 
