@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var newText = inputTemp.value;
 
         if (newText.trim() === "") {
-            return;
+            alert("Введите текст заметки.");
         }
 
         var li = document.createElement("li");
