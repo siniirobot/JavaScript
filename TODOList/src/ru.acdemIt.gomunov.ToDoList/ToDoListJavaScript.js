@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "<button type='button'>Стереть</button>" +
                 "<button type='button'>Редактировать</button>";
 
-            li.children[0].textContent = text + "   ";
+            li.children[0].textContent = text;
             li.children[1].addEventListener("click", function () {
                 toDoList.removeChild(li);
             });
