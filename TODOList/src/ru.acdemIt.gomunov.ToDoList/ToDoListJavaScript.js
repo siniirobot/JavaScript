@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var li = document.createElement("li");
 
-        function createLi(text) {
+        function initLi(text) {
             li.innerHTML =
                 "<span></span>" +
                 "<button type='button'>Стереть</button>" +
@@ -32,23 +32,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 var saveButton = li.children[2];
 
                 cancelButton.addEventListener("click", function () {
-                    createLi(text);
+                    initLi(text);
                 });
 
                 saveButton.addEventListener("click", function () {
                     var newEditText = li.children[0].value;
 
                     if (newEditText.trim() === "") {
-                        createLi(text);
+                        initLi(text);
                         return;
                     }
 
-                    createLi(newEditText);
+                    initLi(newEditText);
                 })
             });
         }
 
-        createLi(newText);
+        initLi(newText);
         toDoList.appendChild(li);
         inputTemp.value = "";
     });
