@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             li.children[2].addEventListener("click", function () {
                 li.innerHTML =
-                    "<input type='text' placeholder='Введите правки'>" +
+                    "<input type='text' value='" + text + "'>" +
                     "<button type='button'>Отменить</button>" +
                     "<button type='button'>Сохранить</button>";
                 var cancelButton = li.children[1];
