@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     var inputTemperature = document.getElementById("input");
-    var inputTemperatureButton = document.getElementById("input-temp-button");
+    var inputTemperatureButton = document.getElementById("input-temperature-button");
 
     inputTemperatureButton.addEventListener("click", function () {
         var newText = inputTemperature.value;

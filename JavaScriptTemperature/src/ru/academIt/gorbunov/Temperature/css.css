@@ -2,13 +2,13 @@
     box-sizing: border-box;
 }
 
-.input-temp {
+.input-temperature {
     width: 25%;
     margin: 5px 0;
     float: left;
 }
 
-.output-temp {
+.output-temperature {
     width: 75%;
     float: right;
 }
