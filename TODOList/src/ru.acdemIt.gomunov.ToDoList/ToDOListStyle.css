@@ -2,21 +2,22 @@
     box-sizing: border-box;
 }
 
-.input-todo-list{
+.input-todo-list {
     width: 25%;
     float: left;
 
 }
-.output-todo-list{
+
+.output-todo-list {
     width: 75%;
     float: right;
 }
 
-.todo-list-class{
+.todo-list-class {
     float: left;
     margin: 3px 0;
 }
 
-.todo-list-class span{
+.todo-list-class span {
     margin-right: 10px;
 }
