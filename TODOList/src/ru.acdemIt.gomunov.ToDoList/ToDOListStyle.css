@@ -13,11 +13,11 @@
     float: right;
 }
 
-.todo-list-class {
+.output-todo-list {
     float: left;
     margin: 3px 0;
 }
 
-.todo-list-class span {
+.output-todo-list span {
     margin-right: 10px;
 }
