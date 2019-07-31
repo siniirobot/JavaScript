@@ -1,21 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var inputTemp = document.getElementById("input");
-    var inputTempButton = document.getElementById("input-temp-button");
+    var inputTemperature = document.getElementById("input");
+    var inputTemperatureButton = document.getElementById("input-temp-button");
 
-    inputTempButton.addEventListener("click", function () {
-        var newText = inputTemp.value;
+    inputTemperatureButton.addEventListener("click", function () {
+        var newText = inputTemperature.value;
 
         if (!(!isNaN(parseFloat(newText)) && isFinite(newText))) {
-            inputTemp.value = "";
+            inputTemperature.value = "";
             return;
         }
 
-        var tempInCelsius = parseFloat(newText);
+        var temperatureInCelsius = parseFloat(newText);
+
+        function getCelsiusToFahrenheit(temperature) {
+            return ((temperature * 9 / 5) + 32).toFixed(2);
+        }
+
+        function getCelsiusToKelvin(temperature) {
+            return (temperature + 273.15).toFixed(2);
+        }
 
         document.getElementById("output-fahrenheit").innerHTML
-            = "Темепература в фаренгейт - " + ((tempInCelsius * 9 / 5) + 32).toFixed(2);
+            = "Темепература в фаренгейт - " + getCelsiusToFahrenheit(temperatureInCelsius);
 
         document.getElementById("output-kelvin").innerHTML
-            = "Темепература в кельвин - " + (tempInCelsius + 273.15).toFixed(2);
+            = "Темепература в кельвин - " + getCelsiusToKelvin(temperatureInCelsius);
     })
 });
