@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (isNaN(parseFloat(newText)) && !isFinite(newText)) {
             inputTemperature.value = "";
+            alert("Введите температуру в градусах цельсии");
             return;
         }
 
