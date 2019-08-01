@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     var inputTemp = document.getElementById("input");
     var inputTempButton = document.getElementById("input-button");
-    var toDoList = document.getElementById("todo-list");
+    var toDoList = document.getElementsByClassName("todo-list")[0];
 
     inputTempButton.addEventListener("click", function () {
         var newText = inputTemp.value;
