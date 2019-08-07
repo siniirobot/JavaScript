@@ -13,18 +13,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var temperatureInCelsius = parseFloat(newText);
 
-        function getCelsiusToFahrenheit(temperature) {
+        function convertCelsiusToFahrenheit(temperature) {
             return ((temperature * 9 / 5) + 32).toFixed(2);
         }
 
-        function getCelsiusToKelvin(temperature) {
+        function convertCelsiusToKelvin(temperature) {
             return (temperature + 273.15).toFixed(2);
         }
 
         document.getElementById("output-fahrenheit").innerHTML
-            = "Темепература в фаренгейт - " + getCelsiusToFahrenheit(temperatureInCelsius);
+            = "Темепература в фаренгейт - " + convertCelsiusToFahrenheit(temperatureInCelsius);
 
         document.getElementById("output-kelvin").innerHTML
-            = "Темепература в кельвин - " + getCelsiusToKelvin(temperatureInCelsius);
+            = "Темепература в кельвин - " + convertCelsiusToKelvin(temperatureInCelsius);
     })
 });
