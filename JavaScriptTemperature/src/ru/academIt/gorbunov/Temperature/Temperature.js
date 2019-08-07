@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     inputTemperatureButton.addEventListener("click", function () {
         var newText = inputTemperature.value;
 
-        if (isNaN(parseFloat(newText)) && !isFinite(newText)) {
+        if (isNaN(parseFloat(newText)) || !isFinite(newText)) {
             inputTemperature.value = "";
             alert("Введите температуру в градусах цельсии");
             return;
