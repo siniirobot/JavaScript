@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JQueriToDoList/JQueryToDoList.iml" filepath="$PROJECT_DIR$/JQueriToDoList/JQueryToDoList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JQueryToDoList/JQueryToDoList.iml" filepath="$PROJECT_DIR$/JQueryToDoList/JQueryToDoList.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaScript.iml" filepath="$PROJECT_DIR$/JavaScript.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaScriptTemperature/JavaScriptTemperature.iml" filepath="$PROJECT_DIR$/JavaScriptTemperature/JavaScriptTemperature.iml" />
       <module fileurl="file://$PROJECT_DIR$/ObjectWork/ObjectWork.iml" filepath="$PROJECT_DIR$/ObjectWork/ObjectWork.iml" />
