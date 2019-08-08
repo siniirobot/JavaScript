@@ -8,18 +8,19 @@
     <link href="ToDOListStyle.css" rel="stylesheet">
 </head>
 <body>
-    <div class="input-todo-list">
-        <input id="input" type="text" placeholder="Введите задачу.">
-        <button id="input-button" type="button">Ввод</button>
-    </div>
-    <div class="output-todo-list">
-        <ul class="todo-list">
+<div class="input-todo-list">
+    <input id="input" type="text" title="Введите задачу" placeholder="Введите задачу.">
+    <button id="input-button" type="button">Ввод</button>
+    <div id="confirm-dialog" title="Удаление">Вы уверены что хотите удалить<br> эту запись?</div>
+</div>
+<div class="output-todo-list">
+    <ul class="todo-list">
 
-        </ul>
-    </div>
-    <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="node_modules/jquery-ui-dist/jquery-ui.js"></script>
-    <script src="node_modules/underscore/underscore.js"></script>
-    <script src="ToDoListJavaScript.js"></script>
+    </ul>
+</div>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/jquery-ui-dist/jquery-ui.js"></script>
+<script src="node_modules/underscore/underscore.js"></script>
+<script src="ToDoListJavaScript.js"></script>
 </body>
 </html>
