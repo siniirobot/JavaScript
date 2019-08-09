@@ -20,7 +20,7 @@
 .output-todo-list span {
     margin-right: 10px;
 }
-#confirm-dialog{
+.ui-dialog{
     text-align: center;
     display: none;
 }
