@@ -22,4 +22,5 @@
 }
 #confirm-dialog{
     text-align: center;
+    display: none;
 }

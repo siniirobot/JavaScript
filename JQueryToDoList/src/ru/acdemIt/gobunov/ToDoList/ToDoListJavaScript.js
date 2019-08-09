@@ -1,34 +1,4 @@
 $(document).ready(function () {
-    $("#confirm-dialog").dialog({
-        autoOpen: false,
-        modal: true,
-        show: {effect: "blind", duration: 800},
-        hide: {effect: "explode", duration: 800}
-    });
-
-    function addButtonToConfirmDialog(li) {
-        $("#confirm-dialog").dialog(
-            {
-                buttons: [
-                    {
-                        text: "Да",
-                        icon: "ui-icon-trash",
-                        click: function () {
-                            li.remove();
-                            $(this).dialog("close");
-                        }
-                    },
-                    {
-                        text: "Нет",
-                        icon: "ui-icon-cancel",
-                        click: function () {
-                            $(this).dialog("close");
-                        }
-                    }
-                ]
-            });
-    }
-
     var inputTemp = $("#input");
     var inputTempButton = $("#input-button");
     var toDoList = $(".todo-list");
@@ -53,7 +23,29 @@ $(document).ready(function () {
 
             li.children().eq(0).text(text);
             li.children().eq(1).click(function () {
-                addButtonToConfirmDialog(li);
+                $("#confirm-dialog").dialog({
+                    autoOpen: false,
+                    modal: true,
+                    show: {effect: "blind", duration: 800},
+                    hide: {effect: "explode", duration: 800},
+                    buttons: [
+                        {
+                            text: "Да",
+                            icon: "ui-icon-trash",
+                            click: function () {
+                                li.remove();
+                                $(this).dialog("close");
+                            }
+                        },
+                        {
+                            text: "Нет",
+                            icon: "ui-icon-cancel",
+                            click: function () {
+                                $(this).dialog("close");
+                            }
+                        }
+                    ]
+                });
                 $("#confirm-dialog").dialog("open");
             });
 
