@@ -10,7 +10,6 @@ $(document).ready(function () {
             alert("Введите текст заметки.");
             return;
         }
-
         var li = $("<li>");
         initLi(newText);
         toDoList.append(li);
@@ -49,7 +48,6 @@ $(document).ready(function () {
                 $("#confirm-dialog").dialog("open");
             });
 
-
             li.children().eq(2).click(function () {
                 li.html("<input type='text' value='" + text + "'>" +
                     "<button type='button'>Отменить</button>" +
@@ -69,12 +67,9 @@ $(document).ready(function () {
                         initLi(text);
                         return;
                     }
-
                     initLi(newEditText);
                 });
             });
-
-
         }
     });
 });
