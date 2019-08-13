@@ -5,14 +5,14 @@
     <title>PhoneBook</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="phoneBook.css">
+    <link rel="stylesheet" href="PhoneBookCSS.css">
 </head>
 <body>
 <div class="container">
     <div class="row">
         <div class="col">
-            <table>
-                <thead>
+            <table class="table">
+                <thead class="table-dark">
                 <tr>
                     <th class="number">№</th>
                     <th class="surname">Фамилия</th>
@@ -21,7 +21,28 @@
                     <th class="delete-button-column"></th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="table-body">
+                <tr>
+                    <td>1</td>
+                    <td>Воловец</td>
+                    <td>Говард</td>
+                    <td>+1-859-455-47-11</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Воловец</td>
+                    <td>Говард</td>
+                    <td>+1-859-455-47-11</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Воловец</td>
+                    <td>Говард</td>
+                    <td>+1-859-455-47-11</td>
+                    <td></td>
+                </tr>
                 <tr>
                     <td>1</td>
                     <td>Воловец</td>
@@ -31,10 +52,52 @@
                 </tr>
                 </tbody>
             </table>
+            <button id="add-button" type="button" class="btn btn-dark">Добавить запись</button>
+
+            <div class="modal fade" id="add-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Добаление нового человека</h5>
+                        </div>
+                        <form>
+                            <div class="modal-body">
+                                <div class="form-row">
+                                    <div class="col-4">
+                                        <p>Фамилия</p>
+                                        <label>
+                                            <input type="text" class="form-control" required>
+                                        </label>
+                                    </div>
+                                    <div class="col-4">
+                                        <p>Имя</p>
+                                        <label>
+                                            <input type="text" class="form-control" required>
+                                        </label>
+                                    </div>
+                                    <div class="col-4">
+                                        <p>Номер телефона</p>
+                                        <label>
+                                            <input type="tel" class="form-control" required>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Выход</button>
+                                <button type="submit" class="btn btn-primary" id="button-save-data">Сохранить данные
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 <script src="node_modules/jquery/dist/jquery.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="PhoneBookJS.js"></script>
 </body>
 </html>
