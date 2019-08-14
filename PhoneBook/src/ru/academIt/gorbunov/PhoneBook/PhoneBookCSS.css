@@ -1,0 +1,24 @@
+.number{
+    width: 3%;
+}
+
+.surname{
+    width: 35%;
+}
+
+.name{
+    width: 25%;
+}
+
+.phone-number{
+    width: 30%;
+}
+
+.delete-button-column{
+    width: 7%;
+}
+
+.btn-dark{
+    position: absolute;
+    right: 15px;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PhoneBook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="PhoneBookCSS.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead class="table-dark">
+                <tr>
+                    <th class="number">№</th>
+                    <th class="surname">Фамилия</th>
+                    <th class="name">Имя</th>
+                    <th class="phone-number">Номер телефона</th>
+                    <th class="delete-button-column"></th>
+                </tr>
+                </thead>
+                <tbody id="table-body">
+                </tbody>
+            </table>
+            <button id="add-button" type="button" class="btn btn-dark">Добавить запись</button>
+            <div class="modal fade" id="add-person-modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Добаление нового человека</h5>
+                            <button type="button" class="close" data-dismiss="modal">
+                                <span>&times;</span>
+                            </button>
+                        </div>
+                        <form action="" class="form-group main-form needs-validation" id="add-person-form" novalidate>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="surname">Фамилия</label>
+                                            <input type="text" name="surname" id="surname" class="form-control"
+                                                   required>
+                                            <div class="invalid-feedback">Введите фамилию человека</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="name">Имя</label>
+                                            <input type="text" name="name" id="name" class="form-control " required>
+                                            <div class="invalid-feedback">Введите фамилию человека</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="phone">Номер телефона</label>
+                                            <input type="tel" name="phone" id="phone" class="form-control " required>
+                                            <div class="invalid-feedback">Введите номер человека в формате
+                                                +7(***)-***-**-**
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" id="button-save-data">Сохранить данные
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="node_modules/jquery-inputmask/index.js"></script>
+
+<script src="PhoneBookJS.js"></script>
+</body>
+</html>
