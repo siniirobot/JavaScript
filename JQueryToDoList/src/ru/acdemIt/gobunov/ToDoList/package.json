@@ -1,7 +1,6 @@
 {
   "name": "ToDoList",
   "version": "1.0.0",
-  "description": "",
   "main": "ToDoListJavaScript.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,5 +12,6 @@
     "jquery": "^3.4.1",
     "jquery-ui-dist": "^1.12.1",
     "underscore": "^1.9.1"
-  }
+  },
+  "description": ""
 }
