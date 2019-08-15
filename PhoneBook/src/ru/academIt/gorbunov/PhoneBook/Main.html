@@ -25,6 +25,7 @@
                 </tbody>
             </table>
             <button id="add-button" type="button" class="btn btn-dark">Добавить запись</button>
+            <!-- Модальное окно с формой добавления человека начало -->
             <div class="modal fade" id="add-person-modal">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -71,6 +72,27 @@
                     </div>
                 </div>
             </div>
+            <!-- Модальное окно с формой добавления человека конец -->
+            <!--Модальное окно подтверждения удаления человека начало-->
+            <div class="modal fade" id="delete-person-modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Удаление человека</h5>
+                            <button type="button" class="close" data-dismiss="modal">
+                                <span>&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Вы уверены что хотите удалить человека из записной книжки?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id="confirm-delete-button">Ок</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Модальное окно подтверждения удаления человека конец-->
         </div>
     </div>
 </div>

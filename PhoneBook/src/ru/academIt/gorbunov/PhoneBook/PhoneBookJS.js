@@ -9,34 +9,46 @@ $(function () {
         var surname = $("#surname");
         var name = $("#name");
         var phone = $("#phone");
-        var addPersonButton = $("#button-save-data");
+        var savePersonButton = $("#button-save-data");
 
-        addPersonModal.modal('show');
+        addPersonModal.modal('toggle');
         phone.mask("+7(999)999-99-99");
-        form.reset();
 
-        addPersonButton.click(function (event) {
+        savePersonButton.click(function () {
             if (form.checkValidity() === false) {
                 event.preventDefault();
                 event.stopPropagation();
                 form.classList.add('was-validated');
             } else {
-                var tr = $("<tr>");
-                tr.html("<td>" + index + "</td>" +
-                    "<td>" + surname.val() + "</td>" +
-                    "<td>" + name.val() + "</td>" +
-                    "<td>" + phone.val() + "</td>" +
+                var tr = $("<tr>").html(
+                    "<td class='id'><p>" + index + "</p></td>" +
+                    "<td><p>" + surname.val() + "</p></td>" +
+                    "<td><p>" + name.val() + "</p></td>" +
+                    "<td><p>" + phone.val() + "</p></td>" +
                     "<td><button type='button' class='btn bg-danger'>Удалить</button></td>");
+
                 var deleteButton = tr.children().eq(4).children().eq(0);
+
                 deleteButton.click(function () {
-                    tr.remove();
-                    index = 1;
-                    tableBody.each(function (i, elem) {
-                        elem.children(0).value(index++);
-                    })
+                    var confirmDeleteModal = $("#delete-person-modal");
+                    var confirmDeleteButton = $("#confirm-delete-button");
+
+                    confirmDeleteModal.modal('toggle');
+
+                    confirmDeleteButton.click(function () {
+                        tr.remove();
+                        index = 1;
+                        $("tr", tableBody).each(function (i, val) {
+                            $(val).children().eq(0).text(index++);
+                        });
+                        confirmDeleteModal.modal('hide');
+                    });
                 });
                 index++;
                 tableBody.append(tr);
+                $("input",form).each(function (i, val) {
+                    $(val).val("");
+                });
                 addPersonModal.modal('hide');
             }
         });
