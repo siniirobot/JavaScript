@@ -53,8 +53,16 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     var averageAge =  _.chain(peoples)
-        .map("age")
+        .pluck("age")
         .reduce(function(memo, num){ return memo + num; }, 0)
         .value() / peoples.length;
     console.log(averageAge);
+
+    var peoplesFrom20To30 = _.chain(peoples)
+        .filter(function (p) {
+            return p.age >=3 && p.age<=30;
+        })
+        .sortBy("age")
+        .value();
+    console.log(peoplesFrom20To30);
 });
