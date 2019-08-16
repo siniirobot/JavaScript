@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var peopls = [
+    var peoples = [
         {
             age:25,
             name: "Andy",
@@ -52,5 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     ];
 
-
+    var averageAge =  _.chain(peoples)
+        .map("age")
+        .reduce(function(memo, num){ return memo + num; }, 0)
+        .value() / peoples.length;
+    console.log(averageAge);
 });
