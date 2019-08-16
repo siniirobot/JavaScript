@@ -1,24 +1,24 @@
-.number{
+.number {
     width: 3%;
 }
 
-.surname{
+.surname {
     width: 35%;
 }
 
-.name{
+.name {
     width: 25%;
 }
 
-.phone-number{
+.phone-number {
     width: 30%;
 }
 
-.delete-button-column{
+.delete-button-column {
     width: 7%;
 }
 
-.btn-dark{
+.btn-dark {
     position: absolute;
     right: 15px;
 }

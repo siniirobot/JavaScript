@@ -26,7 +26,6 @@ $(function () {
                     "<td><p>" + name.val() + "</p></td>" +
                     "<td><p>" + phone.val() + "</p></td>" +
                     "<td><button type='button' class='btn bg-danger'>Удалить</button></td>");
-
                 var deleteButton = tr.children().eq(4).children().eq(0);
 
                 deleteButton.click(function () {
@@ -38,20 +37,21 @@ $(function () {
                     confirmDeleteButton.click(function () {
                         tr.remove();
                         index = 1;
+
                         $("tr", tableBody).each(function (i, val) {
                             $(val).children().eq(0).text(index++);
                         });
-                        confirmDeleteModal.modal('hide');
+                        confirmDeleteModal.modal('toggle');
                     });
                 });
                 index++;
                 tableBody.append(tr);
-                $("input",form).each(function (i, val) {
+
+                $("input", form).each(function (i, val) {
                     $(val).val("");
                 });
-                addPersonModal.modal('hide');
+                addPersonModal.modal('toggle');
             }
         });
     });
-
 });
