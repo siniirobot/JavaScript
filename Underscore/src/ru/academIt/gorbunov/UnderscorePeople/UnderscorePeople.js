@@ -1,68 +1,79 @@
 document.addEventListener("DOMContentLoaded", function () {
     var peoples = [
         {
-            age:25,
+            age: 25,
             name: "Andy",
-            lastName:"Kendy"
+            lastName: "Kendy"
         },
         {
-            age:35,
+            age: 35,
             name: "David",
-            lastName:"Mavid"
+            lastName: "Mavid"
         },
         {
-            age:15,
+            age: 15,
             name: "Gorge",
-            lastName:"Ortg"
+            lastName: "Ortg"
         },
         {
-            age:45,
+            age: 45,
             name: "Angelina",
-            lastName:"Milina"
+            lastName: "Milina"
         },
         {
-            age:67,
+            age: 67,
             name: "Mark",
-            lastName:"Cucamber"
+            lastName: "Cucareku"
         },
         {
-            age:23,
+            age: 23,
             name: "Maria",
-            lastName:"Shwartz"
+            lastName: "Shwartz"
         },
         {
-            age:99,
+            age: 99,
             name: "Kate",
-            lastName:"Ostin"
+            lastName: "Ostin"
         },
         {
-            age:11,
+            age: 11,
             name: "Nikolai",
-            lastName:"Hypo"
+            lastName: "Hypo"
         },
         {
-            age:4,
+            age: 4,
             name: "Andrew",
-            lastName:"Dahno"
+            lastName: "Dahno"
         },
         {
-            age:46,
+            age: 46,
             name: "Oleg",
-            lastName:"Vlasov"
+            lastName: "Vlasov"
         }
     ];
 
-    var averageAge =  _.chain(peoples)
+    var averageAge = _.chain(peoples)
         .pluck("age")
-        .reduce(function(memo, num){ return memo + num; }, 0)
-        .value() / peoples.length;
+        .reduce(function (memo, num) {
+            return memo + num;
+        }, 0)
+        .value() / _.size(peoples);
     console.log(averageAge);
 
     var peoplesFrom20To30 = _.chain(peoples)
         .filter(function (p) {
-            return p.age >=3 && p.age<=30;
+            return p.age >= 20 && p.age <= 30;
         })
         .sortBy("age")
         .value();
     console.log(peoplesFrom20To30);
+
+    var fullName = _.chain(peoples)
+        .map(function (p) {
+            return p.fullName = p.lastName + " " + p.name;
+        })
+        .assign(peoples)
+        .value();
+
+    console.log(fullName);
 });
