@@ -51,12 +51,10 @@ var peoples = [
     }
 ];
 
-var averageAge = _.chain(peoples)
-    .pluck("age")
-    .reduce(function (memo, num) {
-        return memo + num;
-    }, 0)
-    .value() / _.size(peoples);
+var averageAge = _.reduce(peoples, function (memo, num) {
+    return memo + num["age"];
+}, 0) / _.size(peoples);
+
 console.log(averageAge);
 
 var peoplesFrom20To30 = _.chain(peoples)
