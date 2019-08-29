@@ -57,21 +57,17 @@ console.log(function () {
     }, 0) / peoples.length;
 });
 
-function peoplesFrom20To30(peoples) {
+console.log(function peoplesFrom20To30(peoples) {
     return _.chain(peoples)
         .filter(function (p) {
             return p.age >= 20 && p.age <= 30;
         })
         .sortBy("age")
         .value();
-}
+});
 
-console.log(peoplesFrom20To30(peoples));
-
-function fullName(peoples) {
+console.log(function fullName(peoples) {
     return _.assign(_.map(peoples, function (p) {
         return p.fullName = p.lastName + " " + p.name;
     }), peoples);
-}
-
-console.log(fullName(peoples));
+});
