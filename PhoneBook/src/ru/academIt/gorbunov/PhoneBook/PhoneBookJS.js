@@ -22,11 +22,11 @@ $(function () {
             } else {
                 var tr = $("<tr>").html(
                     "<td class=\"id\"><p>" + index + "</p></td>" +
-                    "<td><p>" + surname.val() + "</p></td>" +
-                    "<td><p>" + name.val() + "</p></td>" +
-                    "<td><p>" + phone.val() + "</p></td>" +
+                    "<td><p>" + surname.text() + "</p></td>" +
+                    "<td><p>" + name.text() + "</p></td>" +
+                    "<td><p>" + phone.text() + "</p></td>" +
                     "<td><button type=\"button\" class=\"btn bg-danger\">Удалить</button></td>");
-                var deleteButton = tr.children().eq(4).children().eq(0);
+                var deleteButton = tr.find(".btn");
 
                 deleteButton.click(function () {
                     var confirmDeleteModal = $("#delete-person-modal");
@@ -39,7 +39,8 @@ $(function () {
                         index = 1;
 
                         $("tr", tableBody).each(function (i, val) {
-                            $(val).children().eq(0).text(index++);
+                            $(val).children().eq(0).text(index);
+                            index++;
                         });
                         confirmDeleteModal.modal("toggle");
                     });
@@ -50,6 +51,7 @@ $(function () {
                 $("input", form).each(function (i, val) {
                     $(val).val("");
                 });
+
                 addPersonModal.modal("toggle");
             }
         });
