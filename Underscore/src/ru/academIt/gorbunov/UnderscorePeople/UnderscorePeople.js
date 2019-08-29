@@ -51,25 +51,29 @@ var peoples = [
     }
 ];
 
-var averageAge = _.reduce(peoples, function (memo, num) {
-    return memo + num["age"];
-}, 0) / _.size(peoples);
+function averageAge(peoples) {
+    return _.reduce(peoples, function (memo, num) {
+        return memo + num["age"];
+    }, 0) / _.size(peoples);
+}
 
-console.log(averageAge);
+console.log(averageAge(peoples));
 
-var peoplesFrom20To30 = _.chain(peoples)
-    .filter(function (p) {
-        return p.age >= 20 && p.age <= 30;
-    })
-    .sortBy("age")
-    .value();
-console.log(peoplesFrom20To30);
+function peoplesFrom20To30(peoples) {
+    return _.chain(peoples)
+        .filter(function (p) {
+            return p.age >= 20 && p.age <= 30;
+        })
+        .sortBy("age")
+        .value();
+}
 
-var fullName = _.chain(peoples)
-    .map(function (p) {
+console.log(peoplesFrom20To30(peoples));
+
+function fullName(peoples) {
+    return _.assign(_.map(peoples, function (p) {
         return p.fullName = p.lastName + " " + p.name;
-    })
-    .assign(peoples)
-    .value();
+    }), peoples);
+}
 
-console.log(fullName);
+console.log(fullName(peoples));
