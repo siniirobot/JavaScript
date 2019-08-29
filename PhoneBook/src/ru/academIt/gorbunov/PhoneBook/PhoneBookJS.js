@@ -20,10 +20,14 @@ $(function () {
                 event.stopPropagation();
                 form.classList.add("was-validated");
             } else {
+                function proba(html) {
+                    return $($.parseHTML(html)).text();
+                }
+
                 var tr = $("<tr>").html(
                     "<td class=\"id\"><p>" + index + "</p></td>" +
-                    "<td><p>" + surname.val() + "</p></td>" +
-                    "<td><p>" + name.val() + "</p></td>" +
+                    "<td><p>" + proba(surname.val()) + "</p></td>" +
+                    "<td><p>" + proba(name.val()) + "</p></td>" +
                     "<td><p>" + phone.val() + "</p></td>" +
                     "<td><button type=\"button\" class=\"btn bg-danger\">Удалить</button></td>");
                 var deleteButton = tr.find(".btn");
