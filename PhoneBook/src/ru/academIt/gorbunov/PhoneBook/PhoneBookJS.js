@@ -23,13 +23,13 @@ $(function () {
                 function antiInjection(html) {
                     return $($.parseHTML(html)).text();
                 }
-
                 var tr = $("<tr>").html(
                     "<td class=\"id\"><p>" + index + "</p></td>" +
                     "<td><p>" + antiInjection(surname.val()) + "</p></td>" +
                     "<td><p>" + antiInjection(name.val()) + "</p></td>" +
                     "<td><p>" + phone.val() + "</p></td>" +
                     "<td><button type=\"button\" class=\"btn bg-danger\">Удалить</button></td>");
+
                 var confirmDeleteButton = tr.find(".btn");
 
                 confirmDeleteButton.unbind('click').click(function () {
