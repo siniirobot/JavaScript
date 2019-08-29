@@ -3,7 +3,7 @@ $(function () {
     var addButton = $("#add-button");
     var index = 1;
 
-    addButton.click(function () {
+    addButton.unbind('click').click(function () {
         var addPersonModal = $("#add-person-modal");
         var form = document.querySelector(".needs-validation");
         var surname = $("#surname");
@@ -14,31 +14,32 @@ $(function () {
         addPersonModal.modal("toggle");
         phone.mask("+7(999)999-99-99");
 
-        savePersonButton.click(function () {
+        savePersonButton.unbind('click').click(function () {
             if (form.checkValidity() === false) {
                 event.preventDefault();
                 event.stopPropagation();
                 form.classList.add("was-validated");
             } else {
-                function proba(html) {
+                function antiInjection(html) {
                     return $($.parseHTML(html)).text();
                 }
 
                 var tr = $("<tr>").html(
                     "<td class=\"id\"><p>" + index + "</p></td>" +
-                    "<td><p>" + proba(surname.val()) + "</p></td>" +
-                    "<td><p>" + proba(name.val()) + "</p></td>" +
+                    "<td><p>" + antiInjection(surname.val()) + "</p></td>" +
+                    "<td><p>" + antiInjection(name.val()) + "</p></td>" +
                     "<td><p>" + phone.val() + "</p></td>" +
                     "<td><button type=\"button\" class=\"btn bg-danger\">Удалить</button></td>");
-                var deleteButton = tr.find(".btn");
+                var confirmDeleteButton = tr.find(".btn");
 
-                deleteButton.click(function () {
+                confirmDeleteButton.unbind('click').click(function () {
                     var confirmDeleteModal = $("#delete-person-modal");
                     var confirmDeleteButton = $("#confirm-delete-button");
+                    var cancelDeleteButton = $("#cancel-delete-button");
 
                     confirmDeleteModal.modal("toggle");
 
-                    confirmDeleteButton.click(function () {
+                    confirmDeleteButton.unbind('click').click(function () {
                         tr.remove();
                         index = 1;
 
@@ -48,6 +49,10 @@ $(function () {
                         });
                         confirmDeleteModal.modal("toggle");
                     });
+
+                    cancelDeleteButton.unbind('click').click(function () {
+                        confirmDeleteModal.modal("toggle");
+                    })
                 });
                 index++;
                 tableBody.append(tr);
