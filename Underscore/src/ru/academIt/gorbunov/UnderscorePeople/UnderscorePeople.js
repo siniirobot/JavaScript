@@ -51,13 +51,11 @@ var peoples = [
     }
 ];
 
-function averageAge(peoples) {
+console.log(function () {
     return _.reduce(peoples, function (memo, num) {
-        return memo + num["age"];
-    }, 0) / _.size(peoples);
-}
-
-console.log(averageAge(peoples));
+        return memo + num.age;
+    }, 0) / peoples.length;
+});
 
 function peoplesFrom20To30(peoples) {
     return _.chain(peoples)
