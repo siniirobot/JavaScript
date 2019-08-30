@@ -51,23 +51,23 @@ var peoples = [
     }
 ];
 
-console.log(function () {
+console.log((function (peoples) {
     return _.reduce(peoples, function (memo, num) {
         return memo + num.age;
     }, 0) / peoples.length;
-});
+})(peoples));
 
-console.log(function peoplesFrom20To30(peoples) {
+console.log((function (peoples) {
     return _.chain(peoples)
         .filter(function (p) {
             return p.age >= 20 && p.age <= 30;
         })
         .sortBy("age")
         .value();
-});
+})(peoples));
 
-console.log(function fullName(peoples) {
-    return _.assign(_.map(peoples, function (p) {
+console.log((function (peoples) {
+    return _.each(peoples, function (p) {
         return p.fullName = p.lastName + " " + p.name;
-    }), peoples);
-});
+    });
+})(peoples));
